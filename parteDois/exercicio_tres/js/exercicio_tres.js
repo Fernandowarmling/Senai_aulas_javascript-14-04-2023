@@ -1,7 +1,30 @@
-//3.Crie um formulário HTML que tenha um campo de entrada de texto para o nome e outro para o e-mail. Em seguida, crie uma função JavaScript que valide se os campos foram preenchidos corretamente (ou seja, se o campo de nome não está vazio e se o campo de e-mail contém um endereço de e-mail válido).
+function teste() {
+    var nome = document.frmFormulario.txtnome.value
+    
+    var exnome = /^[a-zA-Z\s]+$/;
+    var nomenum = /^.{2,}$/;
+    
+    
 
+    if (!exnome.test(nome) && !nomenum.test(nome) ) { 
+        console.log("Erro de nome")
+        alert("Preencha o campo Nome correntamente.");
+        document.frmFormulario.txtnome.focus();
+        return false;
+    }
 
-function validaCampos(){
+    var email = document.frmFormulario.txtmail.value
+    const exmail  =/\S+@\S+\.\S+/;
+
+    if(!exmail.test(email)){
+        console.log("Erro de email")
+        alert("Preencha o campo Email corretamente.")
+        document.frmFormulario.txtmail.focus();
+        return false;
+    }
+        
     
 
 }
+
+
